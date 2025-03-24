@@ -3,11 +3,15 @@ const Login=()=>{
   
     const {email,password,getEmail,getPassword}=AuthHooks()
 
+    const SubmitForm=(e)=>{
+        e.preventDefault()
+        console.log(email,password)
+    }
 
     return (
         <div>
             <div>
-                <form>
+                <form onSubmit={SubmitForm}>
                    <div>
                      <input type="email" placeholder="Enter email"   value={email} onChange={(e)=>getEmail(e)} />
                    </div>
